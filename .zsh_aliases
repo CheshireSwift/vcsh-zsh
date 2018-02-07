@@ -1,0 +1,26 @@
+godir() { cd "$GOPATH/src/$1"; }
+dedit() { vim ~/"$1"; }
+alias vimbundle='cd ~/.vim/bundle'
+alias restart='source ~/.zshrc'
+
+alias ..="cd .."
+
+times() {
+  for i in $(seq 1 $1); do ${*:2}; done
+}
+alias times=times
+
+alias gerp=grep
+
+#diff() {
+#  command diff "$@" | less -FX ; test ${PIPESTATUS[0]} -eq 0
+#}
+#grep() {
+#  command grep "$@" | less -FX ; test ${PIPESTATUS[0]} -eq 0
+#}
+
+alias lines='wc -l'
+
+alias ccat='pygmentize -O style=monokai -f terminal256 -g'
+dread() { ccat ~/"$1"; }
+
