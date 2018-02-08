@@ -85,4 +85,12 @@ export PATH=$PATH:~/.local/bin
 
 eval $(thefuck --alias)
 
+#Change ls colours
+LS_COLORS="ow=01;36;40" && export LS_COLORS
+
+#make cd use the ls colours
+zstyle ':completion:*' list-colors "${(@s.:.)LS_COLORS}"
+autoload -Uz compinit
+compinit
+
 source ~/.zsh_aliases
